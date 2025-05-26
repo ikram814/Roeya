@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
   <br />
     <a href="https://youtu.be/Ahwoks_dawU?feature=shared" target="_blank">
       <img src="https://github.com/sujatagunale/EasyRead/assets/151519281/daf9e91b-6342-4e9a-9361-8dc2bd01ce64" alt="Project Banner">
@@ -32,7 +32,7 @@
 
 ## 🚨 Tutorial
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>. 
+This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
 
 If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
 
@@ -40,7 +40,7 @@ If you prefer visual learning, this is the perfect resource for you. Follow our 
 
 ## <a name="introduction">🤖 Introduction</a>
 
-Build an AI image SaaS platform that excels in image processing capabilities, integrates a secure payment infrastructure, offers advanced image search functionalities, and supports multiple AI features, including image restoration, recoloring, object removal, generative filling, and background removal. This project can be a guide for your next AI image tool and a boost to your portfolio. 
+Build an AI image SaaS platform that excels in image processing capabilities, integrates a secure payment infrastructure, offers advanced image search functionalities, and supports multiple AI features, including image restoration, recoloring, object removal, generative filling, and background removal. This project can be a guide for your next AI image tool and a boost to your portfolio.
 
 If you're getting started and need assistance or face any bugs, join our active Discord community with over 27k+ members. It's a place where people help each other out.
 
@@ -90,7 +90,7 @@ If you're getting started and need assistance or face any bugs, join our active 
 👉 **Responsive UI/UX**: A seamless experience across devices with a user-friendly interface
 
 
-and many more, including code architecture and reusability 
+and many more, including code architecture and reusability
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -1072,7 +1072,7 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
     });
 
     if (!updatedUser) throw new Error("User update failed");
-    
+
     return JSON.parse(JSON.stringify(updatedUser));
   } catch (error) {
     handleError(error);
@@ -1950,7 +1950,7 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
       .sort({ updatedAt: -1 })
       .skip(skipAmount)
       .limit(limit);
-    
+
     const totalImages = await Image.find(query).countDocuments();
     const savedImages = await Image.find().countDocuments();
 
@@ -2264,7 +2264,7 @@ export async function POST(request: Request) {
     };
 
     const newTransaction = await createTransaction(transaction);
-    
+
     return NextResponse.json({ message: "OK", transaction: newTransaction });
   }
 
@@ -2544,4 +2544,4 @@ And if you're hungry for more than just a course and want to understand how we l
 <img src="https://github.com/sujatagunale/EasyRead/assets/151519281/fed352ad-f27b-400d-9b8f-c7fe628acb84" alt="Project Banner">
 </a>
 
-#
+# -->
