@@ -50,13 +50,13 @@ export const Collection = ({
         <p className="p-16-medium text-dark-400 mt-1">See what's possible with our AI</p>
       </div>
 
-      {images.length > 0 ? (
+      {images.filter(image => image.publicId).length > 0 ? (
         <Masonry
           breakpointCols={{default: 3, 1024: 2, 640: 1}}
           className="masonry"
           columnClassName="masonry-column"
         >
-          {images.map((image) => (
+          {images.filter(image => image.publicId).map((image) => (
             <Card image={image} key={String(image._id)} />
           ))}
         </Masonry>
@@ -111,6 +111,7 @@ const Card = ({ image }: { image: IImage }) => {
           loading="lazy"
           className="pinterest-card-img"
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+          onError={(e: any) => { e.target.style.display = 'none'; }}
         />
       </Link>
     </li>

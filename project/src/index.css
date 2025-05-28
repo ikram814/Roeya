@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-100 overflow-x-hidden;
+  }
+  
+  :root {
+    --primary: 221 70% 50%;
+    --secondary: 262 83% 58%;
+    --accent: 190 80% 50%;
+    --success: 142 76% 45%;
+    --warning: 38 92% 50%;
+    --error: 0 91% 64%;
+  }
+}
+
+@layer utilities {
+  @keyframes rotateAroundCenter {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg) translate(200px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+  
+  .animate-pulse {
+    animation: pulse 3s infinite ease-in-out;
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+}

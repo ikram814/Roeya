@@ -18,6 +18,7 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
+      <div className="mt-20" />
       <Header title="Profile" />
 
       <section className="profile">

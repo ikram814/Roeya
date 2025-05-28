@@ -1,3 +1,4 @@
+@import '../public/glass-navbar.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -72,6 +73,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    background: url('/assets/images/sky-bg.jpg') center center / cover no-repeat fixed;
+  }
+  .dark body {
+    background: var(--background);
   }
 }
 
@@ -1297,6 +1302,31 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Dropdown d'édition : fond noir et texte blanc en thème sombre */
+.black-theme .edit-dropdown-list {
+  background: #111 !important;
+  color: #fff !important;
+}
+.black-theme .edit-dropdown-list a {
+  color: #fff !important;
+}
+
+.option-glow {
+  position: relative;
+}
+.option-glow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #a5b4fc 0%, #818cf8 40%, transparent 80%);
+  filter: blur(18px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 

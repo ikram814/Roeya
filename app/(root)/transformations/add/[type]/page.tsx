@@ -14,7 +14,7 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
   const user = await getUserById(userId);
 
   return (
-    <>
+    <main className="mt-16">
       <Header 
         title={transformation.title}
         subtitle={transformation.subTitle}
@@ -28,7 +28,7 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
           creditBalance={user.creditBalance}
         />
       </section>
-    </>
+    </main>
   )
 }
 

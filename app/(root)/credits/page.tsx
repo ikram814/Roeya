@@ -17,6 +17,7 @@ const Credits = async () => {
 
   return (
     <>
+      <div className="mt-20" />
       <Header
         title="Buy Credits"
         subtitle="Choose a credit package that suits your needs!"

@@ -27,11 +27,11 @@ const ThemeButton = ({ className = "" }) => {
   return (
     <button
       onClick={toggleBlackTheme}
-      className="fixed top-2 right-28  z-50 focus:outline-none"
+      className={`w-8 h-8 flex items-center justify-center rounded-full border transition-colors duration-300 focus:outline-none ${className}`}
       style={{ background: 'transparent' }}
     >
       <div
-        className={`flex items-center justify-center w-10 h-10 rounded-full border transition-colors duration-300 ${isDarkTheme ? 'bg-black border-white' : 'bg-gray-200 border-gray-300'}`}
+        className={`flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${isDarkTheme ? 'bg-black border-white' : 'bg-gray-200 border-gray-300'}`}
         style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.10)' }}
       >
         {isDarkTheme ? (

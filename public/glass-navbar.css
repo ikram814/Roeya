@@ -1,0 +1,26 @@
+/* Glassmorphism navbar styles - version transparente et sans néons */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.15); /* très transparent pour le thème clair */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 2.5rem;
+  border: 1.5px solid rgba(200, 200, 200, 0.18);
+  position: relative;
+  overflow: visible;
+  transition: background 0.3s;
+}
+
+/* Pour le thème sombre */
+.black-theme .glass-navbar {
+  background: rgba(20, 20, 30, 0.25); /* transparent sombre */
+  border: 1.5px solid rgba(80, 80, 80, 0.18);
+}
+
+.glass-navbar * {
+  color: #222 !important;
+}
+
+.black-theme .glass-navbar * {
+  color: #fff !important;
+} 
