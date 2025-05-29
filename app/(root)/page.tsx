@@ -115,14 +115,10 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 ai-gradient-text">
             Create beautiful art with <br /> Artificial Intelligence
           </h1>
-          <p className="text-lg text-center mb-6 text-gray-700/80">Be advised that image generation requires an active OpenAI token.</p>
-          <div className="ai-generator-bar flex items-center bg-white/90 rounded-full shadow-lg px-4 py-2 w-[350px] md:w-[500px]">
-            <input
-              type="text"
-              className="flex-1 bg-transparent border-none outline-none text-lg px-2"
-              placeholder="Describe what you want or hit a tag below"
-            />
-            <button className="ml-2 px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition">Generate</button>
+          <p className="text-2xl md:text-3xl text-center mb-6 text-gray-700/80">Welcome to ROEYA</p>
+          <div className="ai-generator-bar flex justify-center items-center bg-white/90 rounded-full shadow-lg px-4 py-2 gap-2">
+            <Link href="/image-generator" className="px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition text-center">Image Generator</Link>
+            <Link href="/video-generator" className="px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition text-center">Video Generator</Link>
           </div>
           <div className="flex gap-2 mt-4 flex-wrap justify-center">
             {["Creative", "Futuristic", "Steampunk", "Gothic", "Space"].map(tag => (

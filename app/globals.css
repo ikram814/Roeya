@@ -1404,6 +1404,55 @@
   color: #fff !important;
 }
 
+.black-theme .bg-purple-100 {
+  color: #111 !important;
+}
+
+.black-theme .glass-navbar a:hover,
+.black-theme .glass-navbar button:hover,
+.black-theme .glass-navbar .button:hover,
+.black-theme .glass-navbar button span:hover {
+  color: #111 !important;
+}
+
+.text-dark-400 {
+  color: #374151 !important;
+}
+
+.purple-theme .glass-navbar a,
+.purple-theme .glass-navbar button,
+.purple-theme .glass-navbar .button {
+  color: #fff !important;
+}
+
+.purple-theme .glass-navbar button span {
+  color: #fff !important;
+}
+
+.purple-theme .glass-navbar a:hover,
+.purple-theme .glass-navbar button:hover,
+.purple-theme .glass-navbar .button:hover,
+.purple-theme .glass-navbar button span:hover {
+  color: #111 !important;
+}
+
+.purple-theme .edit-dropdown-list {
+  background: rgba(109, 40, 217, 0.85) !important;
+  color: #fff !important;
+}
+.purple-theme .edit-dropdown-list a {
+  color: #fff !important;
+}
+
+.purple-theme .text-gray-700\/80,
+.purple-theme .text-dark-400 {
+  color: #fff !important;
+}
+
+.purple-theme .h2-bold {
+  color: #fff !important;
+}
+
 
 
 
