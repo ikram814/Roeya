@@ -65,6 +65,19 @@ const RIGHT_OPTIONS = [
   },
 ];
 
+const ART_BUBBLES_LEFT = [
+  { src: "/assets/images/a1.png", style: { top: "10%", left: "-15%", width: 170, height: 170 } },
+  { src: "/assets/images/a9.png", style: { top: "50%", left: "-18%" } },
+  { src: "/assets/images/a2.png", style: { top: "45%", left: "-1%" , width: 200, height: 200 }  },
+  { src: "/assets/images/a5.png", style: { top: "85%", left: "-14%" ,width: 150, height: 150 } },
+];
+const ART_BUBBLES_RIGHT = [
+  { src: "/assets/images/a4.png", style: { top: "10%", right: "-15%", width: 160, height: 160 } },
+  { src: "/assets/images/a3.png", style: { top: "50%", right: "-18%" } },
+  { src: "/assets/images/a6.png", style: { top: "45%", right: "-1%", width: 200, height: 200 } },
+  { src: "/assets/images/a8.png", style: { top: "85%", right: "-14%", width: 150, height: 150 } },
+];
+
 const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || "";
@@ -72,70 +85,57 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      <section
-        className="w-full flex justify-center items-center py-2 bg-transparent mt-16 relative"
-        style={{ minHeight: CIRCLE_SIZE + 120 }}
-      >
-        {/* Options à gauche dans les espaces vides */}
-        {LEFT_OPTIONS.map((opt, idx) => (
-          <Link
-            key={opt.key}
-            href={opt.route}
-            className="option-glow flex flex-col items-center group pointer-events-auto"
-            style={{
-              position: 'absolute',
-              left: `calc(50% + ${LEFT_OPTION_POSITIONS[idx].x}px)`,
-              top: `calc(50% + ${LEFT_OPTION_POSITIONS[idx].y}px)`,
-              width: BUTTON_SIZE,
-              height: BUTTON_SIZE,
-              zIndex: 20,
-              transform: 'translate(-50%, -50%)',
-            }}
+      {/* Section centrale avec cercles et titre */}
+      <div className="w-full flex flex-col items-center justify-center relative" style={{ minHeight: '70vh' }}>
+        {/* Cercles décoratifs à gauche */}
+        {ART_BUBBLES_LEFT.map((bubble, i) => (
+          <div
+            key={"left-"+i}
+            className="ai-bubble"
+            style={{ position: "absolute", width: 120, height: 120, borderRadius: "50%", overflow: "hidden", boxShadow: "0 4px 24px #0002", ...bubble.style, zIndex: 2 }}
           >
-            <div className="circle-3d" style={{ width: BUTTON_SIZE, height: BUTTON_SIZE, position: 'relative', zIndex: 1 }}>
-              <Image src={opt.icon} alt={opt.label} width={56} height={56} />
-            </div>
-            <span className="feature-text group-hover:text-purple-500 transition-colors text-xs mt-1 w-24 text-center" style={{ fontSize: 13 }}>{opt.label}</span>
-          </Link>
+            <Image src={bubble.src} alt="art" fill style={{ objectFit: "cover" }} />
+          </div>
         ))}
-        {/* Cercle central avec vidéo */}
-        <div
-          className="rounded-full overflow-hidden shadow-2xl border-4 border-white/20 bg-white dark:bg-black flex items-center justify-center"
-          style={{ width: CIRCLE_SIZE, height: CIRCLE_SIZE, zIndex: 10 }}
-        >
-          <ThemeVideoCircle />
+        {/* Cercles décoratifs à droite */}
+        {ART_BUBBLES_RIGHT.map((bubble, i) => (
+          <div
+            key={"right-"+i}
+            className="ai-bubble"
+            style={{ position: "absolute", width: 120, height: 120, borderRadius: "50%", overflow: "hidden", boxShadow: "0 4px 24px #0002", ...bubble.style, zIndex: 2 }}
+          >
+            <Image src={bubble.src} alt="art" fill style={{ objectFit: "cover" }} />
+          </div>
+        ))}
+        {/* Titre et barre centrale */}
+        <div className="flex flex-col items-center justify-center z-10">
+          <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 ai-gradient-text">
+            Create beautiful art with <br /> Artificial Intelligence
+          </h1>
+          <p className="text-lg text-center mb-6 text-gray-700/80">Be advised that image generation requires an active OpenAI token.</p>
+          <div className="ai-generator-bar flex items-center bg-white/90 rounded-full shadow-lg px-4 py-2 w-[350px] md:w-[500px]">
+            <input
+              type="text"
+              className="flex-1 bg-transparent border-none outline-none text-lg px-2"
+              placeholder="Describe what you want or hit a tag below"
+            />
+            <button className="ml-2 px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition">Generate</button>
+          </div>
+          <div className="flex gap-2 mt-4 flex-wrap justify-center">
+            {["Creative", "Futuristic", "Steampunk", "Gothic", "Space"].map(tag => (
+              <span key={tag} className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-purple-200 transition">{tag}</span>
+            ))}
+          </div>
         </div>
-        {/* Options à droite dans les espaces vides */}
-        {RIGHT_OPTIONS.map((opt, idx) => (
-          <Link
-            key={opt.key}
-            href={opt.route}
-            className="option-glow flex flex-col items-center group pointer-events-auto"
-            style={{
-              position: 'absolute',
-              left: `calc(50% + ${RIGHT_OPTION_POSITIONS[idx].x}px)`,
-              top: `calc(50% + ${RIGHT_OPTION_POSITIONS[idx].y}px)`,
-              width: BUTTON_SIZE,
-              height: BUTTON_SIZE,
-              zIndex: 20,
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            <div className="circle-3d" style={{ width: BUTTON_SIZE, height: BUTTON_SIZE, position: 'relative', zIndex: 1 }}>
-              <Image src={opt.icon} alt={opt.label} width={56} height={56} />
-            </div>
-            <span className="feature-text group-hover:text-purple-500 transition-colors text-xs mt-1 w-24 text-center" style={{ fontSize: 13 }}>{opt.label}</span>
-          </Link>
-        ))}
-      </section>
-
-      <section className="sm:mt-12">
+      </div>
+      {/* Galerie en bas */}
+      <div className="w-full z-20 mt-10">
         <Collection
           images={images?.data}
           totalPages={images?.totalPage}
           page={page}
         />
-      </section>
+      </div>
     </>
   );
 };
