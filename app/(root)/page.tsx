@@ -4,6 +4,8 @@ import { getAllImages } from "@/lib/actions/image.actions";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeVideoCircle from "@/components/ThemeVideoCircle";
+import { useEffect, useState } from "react";
+import BackgroundVideo from "../../components/BackgroundVideo";
 
 const CIRCLE_SIZE = 500; // taille du cercle central (px)
 const BUTTON_SIZE = 90; // taille des boutons (px)
@@ -85,6 +87,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
+      <BackgroundVideo />
       {/* Section centrale avec cercles et titre */}
       <div className="w-full flex flex-col items-center justify-center relative" style={{ minHeight: '70vh' }}>
         {/* Cercles décoratifs à gauche */}
@@ -129,12 +132,14 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         </div>
       </div>
       {/* Galerie en bas */}
-      <div className="w-full z-20 mt-10">
-        <Collection
-          images={images?.data}
-          totalPages={images?.totalPage}
-          page={page}
-        />
+      <div className="w-full mt-10 relative">
+        <div className="relative z-10">
+          <Collection
+            images={images?.data}
+            totalPages={images?.totalPage}
+            page={page}
+          />
+        </div>
       </div>
     </>
   );

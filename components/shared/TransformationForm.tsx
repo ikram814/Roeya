@@ -187,30 +187,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center min-h-[600px] py-10">
-      {/* Cercle d'options façon design 1 */}
-      <div className="relative flex items-center justify-center w-[500px] h-[500px] mx-auto mb-10">
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          {/* Cercle central (image ou couleur de fond) */}
-          <div className="rounded-full bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 w-[320px] h-[320px] flex items-center justify-center shadow-2xl">
-            {/* Ici, vous pouvez mettre une image ou un texte central */}
-            <span className="text-2xl font-bold text-gray-700 text-center px-6">Créez de l'art avec l'IA</span>
-          </div>
-        </div>
-        {/* Options autour du cercle */}
-        <RotatingOptionsIndividual
-          options={navLinks.filter(link => [
-            "/transformations/add/restore",
-            "/transformations/add/fill",
-            "/transformations/add/remove",
-            "/transformations/add/recolor",
-            "/transformations/add/removeBackground",
-            "/image-generator"
-          ].includes(link.route))}
-          radius={200}
-          buttonSize={90}
-          optionRadius={200}
-        />
-      </div>
+      {/* Cercle et boutons supprimés */}
       {/* Le reste du formulaire d'édition d'image */}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full max-w-xl mx-auto">

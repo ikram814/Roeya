@@ -1375,6 +1375,35 @@
   .ai-gradient-text { font-size: 2rem !important; }
 }
 
+.black-theme .collection-list {
+  background: rgba(20, 20, 20, 0.85) !important;
+}
+.black-theme .collection-card {
+  background: #18181b !important;
+  color: #fff !important;
+  border: 1.5px solid #333 !important;
+  box-shadow: 0 2px 8px #0006 !important;
+}
+.black-theme .collection-card:hover {
+  border: 1.5px solid #8b5cf6 !important;
+  box-shadow: 0 4px 16px #8b5cf6cc !important;
+}
+.black-theme .collection-btn,
+.black-theme .button.w-32 {
+  background: linear-gradient(90deg, #8b5cf6 0%, #4318ff 100%) !important;
+  color: #fff !important;
+  border: none !important;
+}
+.black-theme .collection-btn:disabled,
+.black-theme .button.w-32:disabled {
+  opacity: 0.5 !important;
+  color: #fff !important;
+}
+.black-theme .pagination,
+.black-theme .pagination * {
+  color: #fff !important;
+}
+
 
 
 

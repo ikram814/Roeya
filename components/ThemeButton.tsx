@@ -3,41 +3,56 @@
 import { useState, useEffect } from 'react';
 
 const ThemeButton = ({ className = "" }) => {
-  const [isBlack, setIsBlack] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [theme, setTheme] = useState('light'); // 'light', 'black', 'purple'
 
   useEffect(() => {
     // Vérifier le thème initial
     const checkTheme = () => {
-      setIsDarkTheme(document.documentElement.classList.contains('black-theme'));
+      if (document.documentElement.classList.contains('black-theme')) setTheme('black');
+      else if (document.documentElement.classList.contains('purple-theme')) setTheme('purple');
+      else setTheme('light');
     };
     checkTheme();
     window.addEventListener('themeChange', checkTheme);
     return () => window.removeEventListener('themeChange', checkTheme);
   }, []);
 
-  const toggleBlackTheme = () => {
-    setIsBlack(!isBlack);
-    // Toggle the class on the document element (html)
-    document.documentElement.classList.toggle('black-theme');
-    // Déclencher un événement personnalisé pour notifier du changement
+  const cycleTheme = () => {
+    // Retirer toutes les classes de thème
+    document.documentElement.classList.remove('black-theme', 'purple-theme');
+    let nextTheme;
+    if (theme === 'light') {
+      document.documentElement.classList.add('black-theme');
+      nextTheme = 'black';
+    } else if (theme === 'black') {
+      document.documentElement.classList.add('purple-theme');
+      nextTheme = 'purple';
+    } else {
+      nextTheme = 'light';
+    }
+    setTheme(nextTheme);
     window.dispatchEvent(new Event('themeChange'));
   };
 
   return (
     <button
-      onClick={toggleBlackTheme}
+      onClick={cycleTheme}
       className={`w-8 h-8 flex items-center justify-center rounded-full border transition-colors duration-300 focus:outline-none ${className}`}
       style={{ background: 'transparent' }}
     >
       <div
-        className={`flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${isDarkTheme ? 'bg-black border-white' : 'bg-gray-200 border-gray-300'}`}
+        className={`flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${theme === 'black' ? 'bg-black border-white' : theme === 'purple' ? 'bg-purple-600 border-purple-300' : 'bg-gray-200 border-gray-300'}`}
         style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.10)' }}
       >
-        {isDarkTheme ? (
+        {theme === 'black' ? (
           // Moon Icon
           <span className="flex items-center justify-center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/><circle cx="15.5" cy="10.5" r="1" fill="white"/></svg>
+          </span>
+        ) : theme === 'purple' ? (
+          // Purple Icon
+          <span className="flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="purple" stroke="#a259f7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="7" fill="#a259f7"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>
           </span>
         ) : (
           // Sun Icon
