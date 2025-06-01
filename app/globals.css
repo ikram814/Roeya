@@ -1252,12 +1252,17 @@ html.purple-theme,
 /* Titre du dialog et bouton Delete en violet dans le thème noir */
 .black-theme .text-2xl.font-bold,
 .black-theme .text-red-500 {
-  color: #a259f7 !important;
+  color: #000000 !important;
 }
+.purple-theme .text-2xl.font-bold,
+.purple-theme .text-red-500 {
+  color: #3c0058 !important;
+}
+
 
 /* X du dialog en noir dans le thème noir */
 .black-theme [data-slot="dialog-close"] svg {
-  color: #fff !important;
+  color: #000000 !important;
 }
 
 input, textarea, select {
@@ -1360,6 +1365,32 @@ body.purple-theme .select-field {
 .image-generator h3,
 .image-generator .styles-title {
   margin-top: -1rem !important;
+}
+
+.purple-theme select,
+.purple-theme .select-field,
+.purple-theme .custom-select {
+  background: #23213a !important;      /* même fond que l'input */
+  border: 2px solid #a259f7 !important;/* même bordure violette */
+  color: #fff !important;              /* texte blanc */
+  font-weight: normal;
+  box-shadow: 0 2px 12px 0 rgba(162, 89, 247, 0.10) !important;
+}
+
+.black-theme button[role="combobox"],
+.purple-theme button[role="combobox"] {
+  background: #23213a !important;
+  color: #fff !important;
+  border: 2px solid #a259f7 !important;
+  border-radius: 16px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 12px 0 rgba(162, 89, 247, 0.10) !important;
+  padding: 1.5rem !important;
+}
+
+.black-theme button[role="combobox"] span,
+.purple-theme button[role="combobox"] span {
+  color: #fff !important;
 }
 
 

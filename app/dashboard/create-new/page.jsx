@@ -287,7 +287,7 @@ Do NOT include any text, explanation, or markdown. Respond ONLY with the JSON ar
   };
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen create-new-page">
       <Navbar />
       <div className='max-w-4xl mx-auto px-8 sm:px-16 lg:px-64 mt-20 ml-8'>
         <h2 className={`text-4xl text-primary text-center ${outfit.className}`}>Create A New Video</h2>
