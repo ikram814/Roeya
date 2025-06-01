@@ -28,6 +28,7 @@ const otherLinks = navLinks.filter(link => ![
 const Navbar = () => {
   const pathname = usePathname();
   const [editOpen, setEditOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <nav className="glass-navbar w-full max-w-6xl mx-auto flex items-center justify-between px-6 py-1 fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-2xl border border-white/20 overflow-visible mb-8 shadow-[0_8px_40px_0_rgba(59,130,246,0.35)]">
@@ -88,12 +89,43 @@ const Navbar = () => {
           >
             Image Generator
           </Link>
-          <Link
-            href="/video-generator"
-            className={`px-3 py-2 rounded-full transition-all text-sm font-medium ${pathname === '/video-generator' ? 'bg-purple-gradient text-white' : 'text-gray-200 hover:bg-blue-100 hover:shadow-[0_2px_8px_0_rgba(59,130,246,0.15)]'}`}
-          >
-            Video Generator
-          </Link>
+          {/* Video Generator Dropdown */}
+          <div className="relative">
+            <button
+              className="flex items-center px-3 py-2 rounded-full transition-all text-sm font-medium text-gray-200 hover:bg-blue-100 hover:shadow-[0_2px_8px_0_rgba(59,130,246,0.15)]"
+              onClick={() => setVideoOpen((v) => !v)}
+              type="button"
+              style={{backdropFilter: 'blur(2px)'}}
+            >
+              <span>Video Generator</span>
+            </button>
+            {videoOpen && (
+              <ul className="absolute left-0 mt-2 w-56 border rounded-lg shadow-lg z-50 edit-dropdown-list bg-white border-gray-600 dark:bg-black">
+                <li>
+                  <Link
+                    href="/dashboard/create-new"
+                    className={`flex items-center gap-2 px-4 py-2 w-full text-left text-sm font-medium rounded-lg transition-all
+                      ${pathname === '/video-generator' ? 'bg-purple-gradient text-white' : 'text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900'}
+                    `}
+                    onClick={() => setVideoOpen(false)}
+                  >
+                    Create Video
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/dashboard"
+                    className={`flex items-center gap-2 px-4 py-2 w-full text-left text-sm font-medium rounded-lg transition-all
+                      ${pathname === '/dashboard' ? 'bg-purple-gradient text-white' : 'text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900'}
+                    `}
+                    onClick={() => setVideoOpen(false)}
+                  >
+                    View Videos
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
         {/* Autres liens (sauf Home et Image Generator) */}
         {otherLinks.filter(link => link.route !== '/' && link.route !== '/image-generator' && link.route !== '/profile' && link.route !== '/credits').map((link) => {

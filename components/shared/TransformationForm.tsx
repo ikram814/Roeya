@@ -186,18 +186,18 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
   }, [image, transformationType.config, type])
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center min-h-[600px] py-10">
+    <div className="relative w-full min-h-[600px] py-10">
       {/* Cercle et boutons supprimés */}
       {/* Le reste du formulaire d'édition d'image */}
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full max-w-xl mx-auto">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
           {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
           <CustomField 
             control={form.control}
             name="title"
             formLabel="Image Title"
             className="w-full"
-            render={({ field }) => <Input {...field} className="input-field" />}
+            render={({ field }) => <Input {...field} className="input-field w-full shadow-[0_2px_12px_0_rgba(59,130,246,0.25)] focus:shadow-[0_0_0_4px_rgba(59,130,246,0.25)]" />}
           />
 
           {type === 'fill' && (
@@ -227,7 +227,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
           )}
 
           {(type === 'remove' || type === 'recolor') && (
-            <div className="prompt-field">
+            <div className="prompt-field w-full">
               <CustomField 
                 control={form.control}
                 name="prompt"
@@ -238,7 +238,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                 render={({ field }) => (
                   <Input 
                     value={field.value}
-                    className="input-field"
+                    className="input-field shadow-[0_2px_12px_0_rgba(59,130,246,0.25)] focus:shadow-[0_0_0_4px_rgba(59,130,246,0.25)]"
                     onChange={(e) => onInputChangeHandler(
                       'prompt',
                       e.target.value,
@@ -258,7 +258,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                   render={({ field }) => (
                     <Input 
                       value={field.value}
-                      className="input-field"
+                      className="input-field shadow-[0_2px_12px_0_rgba(59,130,246,0.25)] focus:shadow-[0_0_0_4px_rgba(59,130,246,0.25)]"
                       onChange={(e) => onInputChangeHandler(
                         'color',
                         e.target.value,
@@ -272,7 +272,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             </div>
           )}
 
-          <div className="media-uploader-field">
+          <div className="media-uploader-field w-full">
             <CustomField 
               control={form.control}
               name="publicId"

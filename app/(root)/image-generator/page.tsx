@@ -112,13 +112,12 @@ export default function ImageGenerator() {
   };
 
   return (
-    <>
+    <div className="image-generator flex flex-col items-center justify-center min-h-screen w-full max-w-[900px] mx-auto">
       <h1 className="text-center pt-8 h1-semibold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-4xl font-bold text-transparent">
         Generate Image
       </h1>
-
-      <form onSubmit={handleGenerate} className="p-8 space-y-6 bg-transparent">
-        <div className="relative max-w-4xl mx-auto">
+      <form onSubmit={handleGenerate} className="p-8 space-y-6 bg-transparent w-full max-w-4xl flex flex-col items-center">
+        <div className="relative w-full">
           <textarea
             className="w-full min-h-[120px] rounded-xl border-2 border-purple-100/50 dark:border-gray-700/50 bg-transparent p-4 text-black dark:text-white shadow-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200/50 dark:focus:ring-purple-700/50 placeholder-black/70 dark:placeholder-white/70"
             placeholder="Describe your imagination in detail..."
@@ -136,7 +135,7 @@ export default function ImageGenerator() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 w-full">
           <div className="relative">
             <select
               className="w-full appearance-none rounded-xl border-2 border-purple-100/50 dark:border-gray-700/50 bg-transparent p-3 pr-10 text-black dark:text-white shadow-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200/50 dark:focus:ring-purple-700/50"
@@ -199,7 +198,7 @@ export default function ImageGenerator() {
           </button>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl w-full">
           <h3 className="text-lg font-semibold mb-2">Styles</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
             {styleOptions.map((style) => (
@@ -219,7 +218,7 @@ export default function ImageGenerator() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto w-full">
           {generatedImages.map((imagePath, index) => (
             <div
               key={index}
@@ -243,6 +242,6 @@ export default function ImageGenerator() {
           ))}
         </div>
       </form>
-    </>
+    </div>
   );
 }

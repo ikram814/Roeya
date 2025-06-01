@@ -185,6 +185,13 @@
 
   .input-field {
     @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-dark-600 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
+    box-shadow: 0 2px 12px 0 rgba(59,130,246,0.25) !important;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.25) !important;
   }
 
   .search-field {
@@ -299,6 +306,7 @@
   /* MediaUploader Component */
   .media-uploader_cldImage {
     @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    box-shadow: 0 2px 12px 0 rgba(59,130,246,0.18) !important;
   }
 
   .media-uploader_cta {
@@ -773,293 +781,14 @@
 
 .image-generator {
   width: 100%;
-  max-width: 800px;
+  max-width: 1100px !important;
   padding: 2rem;
 }
 
 .image-generator h1 {
   font-size: 2.5rem;
   color: #4f46e5;
-  margin-bottom: 2rem;
-}
-
-.black-theme .image-generator h1 {
-  color: #8b5cf6;
-}
-
-.prompt-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.prompt-container {
-  position: relative;
-  width: 100%;
-}
-
-.prompt-input {
-  width: 100%;
-  min-height: 120px;
-  padding: 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #1f2937;
-  background-color: #f3f4f6;
-  border: 2px solid #e5e7eb;
-  border-radius: 0.75rem;
-  resize: vertical;
-  transition: all 0.3s ease;
-}
-
-.black-theme .prompt-input {
-  background-color: #1f2937;
-  border-color: #374151;
-  color: #f3f4f6;
-}
-
-.prompt-input:focus {
-  outline: none;
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
-}
-
-.prompt-btn {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #8b5cf6;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.prompt-btn:hover {
-  background-color: #7c3aed;
-  transform: scale(1.05);
-}
-
-.prompt-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.select-wrapper {
-  position: relative;
-  flex: 1;
-  min-width: 200px;
-}
-
-.custom-select {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  color: #1f2937;
-  background-color: #f3f4f6;
-  border: 2px solid #e5e7eb;
-  border-radius: 0.75rem;
-  appearance: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.black-theme .custom-select {
-  background-color: #1f2937;
-  border-color: #374151;
-  color: #f3f4f6;
-}
-
-.custom-select:focus {
-  outline: none;
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
-}
-
-.select-icon {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6b7280;
-  pointer-events: none;
-}
-
-.black-theme .select-icon {
-  color: #9ca3af;
-}
-
-.generate-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
-  background-color: #8b5cf6;
-  border: none;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.generate-btn:hover {
-  background-color: #7c3aed;
-  transform: translateY(-2px);
-}
-
-.generate-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.img-card {
-  position: relative;
-  background-color: #f3f4f6;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-
-.black-theme .img-card {
-  background-color: #1f2937;
-}
-
-.status-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 2rem;
-}
-
-.spinner {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 3px solid #e5e7eb;
-  border-top-color: #8b5cf6;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.status-text {
-  margin-top: 1rem;
-  color: #6b7280;
-}
-
-.black-theme .status-text {
-  color: #9ca3af;
-}
-
-.result-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.img-card:hover .img-overlay {
-  opacity: 1;
-}
-
-.img-download-btn {
-  padding: 0.75rem;
-  color: white;
-  background-color: #8b5cf6;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.img-download-btn:hover {
-  background-color: #7c3aed;
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .prompt-actions {
-    flex-direction: column;
-  }
-
-  .select-wrapper {
-    width: 100%;
-  }
-
-  .generate-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Styles pour la page de génération d'images */
-.black-theme .cl-rootBox, 
-.black-theme .cl-card, 
-.black-theme .cl-main, 
-.black-theme .cl-page, 
-.black-theme .cl-profilePage, 
-.black-theme .cl-userProfile-root {
-  background: #000 !important;
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-.centered-generator {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 2rem;
-  background: linear-gradient(to bottom, #f5f3ff, #ede9fe);
-}
-
-.black-theme .centered-generator {
-  background: linear-gradient(to bottom, #1a1a2e, #16162a);
-}
-
-.image-generator {
-  width: 100%;
-  max-width: 800px;
-  padding: 2rem;
-}
-
-.image-generator h1 {
-  font-size: 2.5rem;
-  color: #4f46e5;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .black-theme .image-generator h1 {
@@ -1452,6 +1181,187 @@
 .purple-theme .h2-bold {
   color: #fff !important;
 }
+
+/* Thème purple : fond dégradé violet/bleu/rose, titres et texte en blanc */
+.purple-theme body,
+body.purple-theme,
+html.purple-theme,
+.purple-theme {
+  background: 
+    radial-gradient(ellipse 60% 40% at 70% 20%, rgba(162,89,247,0.45) 0%, transparent 80%),
+    radial-gradient(ellipse 40% 30% at 30% 80%, rgba(120,87,255,0.55) 0%, transparent 80%),
+    radial-gradient(ellipse 40% 30% at 60% 70%, rgba(255,92,247,0.35) 0%, transparent 80%),
+    #0a0618 !important;
+  background-blend-mode: lighten, lighten, lighten, normal;
+  color: #fff !important;
+  animation: purple-bg-move 18s ease-in-out infinite alternate;
+  background-size: 100% 100%;
+}
+
+@keyframes purple-bg-move {
+  0% {
+    background-position:
+      70% 20%,
+      30% 80%,
+      60% 70%,
+      center;
+  }
+  50% {
+    background-position:
+      60% 30%,
+      40% 70%,
+      70% 60%,
+      center;
+  }
+  100% {
+    background-position:
+      75% 25%,
+      25% 75%,
+      65% 75%,
+      center;
+  }
+}
+
+/* Ajout pour forcer le fond noir sur tout le body en black-theme */
+.black-theme body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Ajout pour les principaux conteneurs si besoin */
+.black-theme .min-h-screen,
+.black-theme .max-w-4xl,
+.black-theme .mx-auto,
+.black-theme .px-8,
+.black-theme .sm\:px-16,
+.black-theme .lg\:px-64,
+.black-theme .mt-20,
+.black-theme .ml-8 {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+/* Titres en violet dans le thème noir pour la page de création de vidéo */
+.black-theme .text-4xl,
+.black-theme .font-bold.text-xl.text-primary,
+.black-theme .h1-semibold,
+.black-theme .h2-bold {
+  color: #a259f7 !important;
+}
+
+/* Titre du dialog et bouton Delete en violet dans le thème noir */
+.black-theme .text-2xl.font-bold,
+.black-theme .text-red-500 {
+  color: #a259f7 !important;
+}
+
+/* X du dialog en noir dans le thème noir */
+.black-theme [data-slot="dialog-close"] svg {
+  color: #fff !important;
+}
+
+input, textarea, select {
+  box-shadow: 0 2px 12px 0 rgba(59,130,246,0.25) !important;
+}
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.25) !important;
+}
+.media-uploader_cldImage {
+  box-shadow: 0 2px 12px 0 rgba(59,130,246,0.18) !important;
+}
+
+.black-theme input, .black-theme textarea, .black-theme select,
+.purple-theme input, .purple-theme textarea, .purple-theme select {
+  box-shadow: 0 2px 12px 0 rgba(59,130,246,0.25) !important;
+}
+.black-theme input:focus, .black-theme textarea:focus, .black-theme select:focus,
+.purple-theme input:focus, .purple-theme textarea:focus, .purple-theme select:focus {
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.25) !important;
+}
+.black-theme .media-uploader_cldImage,
+.purple-theme .media-uploader_cldImage {
+  box-shadow: 0 2px 12px 0 rgba(59,130,246,0.18) !important;
+}
+
+body.purple-theme .select-trigger,
+body.purple-theme .select-field {
+  background: #2d014d !important;
+  border: 2px solid #a259f7 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px 0 rgba(162, 89, 247, 0.10) !important;
+}
+
+.purple-theme .h1-semibold,
+.purple-theme .h2-bold,
+.purple-theme .h3-bold,
+.purple-theme .p-24-bold,
+.purple-theme .p-20-semibold,
+.purple-theme .p-18-semibold,
+.purple-theme .p-16-semibold {
+  color: #fff !important;
+}
+
+.black-theme .select-trigger,
+.black-theme .select-trigger *,
+.black-theme .select-trigger [data-slot="select-value"] {
+  color: white !important;
+}
+
+.black-theme select {
+  color: white !important;
+  background: #18181b !important;
+  border-color: #374151 !important;
+}
+.black-theme select option {
+  color: white !important;
+  background: #18181b !important;
+}
+
+.black-theme .fa-chevron-down {
+  color: white !important;
+}
+
+.purple-theme .root,
+.purple-theme .root-container,
+.purple-theme .image-generator,
+.purple-theme .centered-generator {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.purple-theme input,
+.purple-theme textarea,
+.purple-theme select {
+  color: #fff !important;
+  background: #23213a !important; /* fond sombre */
+  border: 2px solid #a259f7 !important;
+}
+
+.purple-theme input::placeholder,
+.purple-theme textarea::placeholder {
+  color: #fff !important;
+  opacity: 0.7;
+}
+
+.purple-theme .fa-chevron-down {
+  color: #fff !important;
+}
+
+.purple-theme .image-generator {
+  max-width: 1100px !important;
+}
+
+/* Réduit aussi le padding du formulaire si besoin */
+.image-generator form, .image-generator .prompt-form {
+  padding-top: 0.5rem !important;
+  margin-top: 0 !important;
+}
+
+.image-generator h3,
+.image-generator .styles-title {
+  margin-top: -1rem !important;
+}
+
 
 
 
