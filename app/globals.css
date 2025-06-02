@@ -666,13 +666,35 @@
   background-color: #333;
   color: #fff;
 }
+/* Styles pour les cartes de crédits en mode purple */
+.purple-theme .credits-item {
+  background-color: #23213a;
+  border-color: #a259f7;
+  box-shadow: 0 4px 16px rgba(162, 89, 247, 0.3);
+  color: #fff;
+}
 
+.purple-theme .credits-item:hover {
+  border-color: #c084fc;
+  box-shadow: 0 8px 24px rgba(162, 89, 247, 0.5);
+}
+
+.purple-theme .credits-btn {
+  background-color: #a259f7;
+  color: #fff;
+}
+
+.purple-theme .credits-btn:hover {
+  background-color: #c084fc;
+  color: #fff;
+}
 /* Styles pour la section profil client en mode sombre */
 .black-theme .profile-balance,
 .black-theme .profile-image-manipulation {
-  background-color: #ffffff;
-  border-color: #e0e0e0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: #0c0c0c; /* Dark purple background */
+  border-color: #6959f7; /* Purple border */
+  box-shadow: 0 4px 16px rgba(97, 61, 255, 0.3); /* Purple shadow */
+  color: #fff; /* White text */
 }
 
 .black-theme .profile-balance h1,
@@ -693,7 +715,7 @@
 .black-theme .profile-image-manipulation p,
 .black-theme .profile-image-manipulation span,
 .black-theme .profile-image-manipulation div {
-  color: #000000 !important;
+  color: #fffefe !important;
 }
 
 .black-theme .profile-balance:hover,
@@ -701,6 +723,39 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Styles pour la section profil client en mode purple */
+.purple-theme .profile-balance,
+.purple-theme .profile-image-manipulation {
+  background-color: #23213a; /* Dark purple background */
+  border-color: #a259f7; /* Purple border */
+  box-shadow: 0 4px 16px rgba(162, 89, 247, 0.3); /* Purple shadow */
+  color: #fff; /* White text */
+}
+.purple-theme .profile-balance h1,
+.purple-theme .profile-balance h2,
+.purple-theme .profile-balance h3,
+.purple-theme .profile-balance h4,
+.purple-theme .profile-balance h5,
+.purple-theme .profile-balance h6,
+.purple-theme .profile-balance p,
+.purple-theme .profile-balance span,
+.purple-theme .profile-balance div,
+.purple-theme .profile-image-manipulation h1,
+.purple-theme .profile-image-manipulation h2,
+.purple-theme .profile-image-manipulation h3,
+.purple-theme .profile-image-manipulation h4,
+.purple-theme .profile-image-manipulation h5,
+.purple-theme .profile-image-manipulation h6,
+.purple-theme .profile-image-manipulation p,
+.purple-theme .profile-image-manipulation span,
+.purple-theme .profile-image-manipulation div {
+  color: #fff !important; /* White text */
+}
+
+.purple-theme .profile-balance:hover,
+.purple-theme .profile-image-manipulation:hover {
+  box-shadow: 0 8px 24px rgba(162, 89, 247, 0.4); /* Darker purple shadow on hover */
+}
 /* Styles pour le menu de gestion de compte Clerk en mode sombre */
 .black-theme .cl-userButtonPopover {
   background-color: white !important;
@@ -1085,7 +1140,15 @@
 }
 
 .ai-gradient-text {
-  background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  background: linear-gradient(90deg, #4318ff 0%, #b078f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.purple-theme .ai-gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #d093ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

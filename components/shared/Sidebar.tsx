@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Button } from '../ui/button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react' // Import useEffect
 import ThemeButton from '@/components/ThemeButton'
 
 const editLinks = navLinks.filter(link => [
@@ -29,6 +29,28 @@ const Navbar = () => {
   const pathname = usePathname();
   const [editOpen, setEditOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [theme, setTheme] = useState("light"); // Add theme state
+
+  useEffect(() => { // Use useEffect to detect theme
+    const checkTheme = () => {
+      if (document.documentElement.classList.contains("black-theme")) {
+        setTheme("black");
+      } else if (document.documentElement.classList.contains("purple-theme")) {
+        setTheme("purple");
+      } else {
+        setTheme("light");
+      }
+    };
+
+    checkTheme();
+    window.addEventListener("themeChange", checkTheme);
+
+    return () => {
+      window.removeEventListener("themeChange", checkTheme);
+    };
+  }, []);
+
+  const logoSrc = theme === "light" ? "/assets/images/logo2.png" : "/assets/images/logo1.png"; // Determine logo source based on theme
 
   return (
     <nav className="glass-navbar w-full max-w-6xl mx-auto flex items-center justify-between px-6 py-1 fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-2xl border border-white/20 overflow-visible mb-8 shadow-[0_8px_40px_0_rgba(59,130,246,0.35)]">
@@ -38,7 +60,7 @@ const Navbar = () => {
       <span className="glass-navbar-neon bottom"></span>
       {/* Logo à gauche */}
       <Link href="/" className="flex items-center gap-2 z-10 mr-8">
-        <Image src="/assets/images/brr.png" alt="logo" width={48} height={48} />
+        <Image src={logoSrc} alt="logo" width={100} height={100} /> {/* Use dynamic logo source */}
       </Link>
       {/* Liens au centre */}
       <div className="flex gap-4 items-center z-10 flex-1 justify-center">

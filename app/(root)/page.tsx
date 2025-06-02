@@ -119,7 +119,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           <p className="text-2xl md:text-3xl text-center mb-6 text-gray-700/80">Welcome to ROEYA</p>
           <div className="ai-generator-bar flex justify-center items-center bg-white/90 rounded-full shadow-lg px-4 py-2 gap-2">
             <Link href="/image-generator" className="px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition text-center">Image Generator</Link>
-            <Link href="/video-generator" className="px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition text-center">Video Generator</Link>
+            <Link href="/dashboard/create-new" className="px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-full font-semibold transition text-center">Video Generator</Link>
           </div>
           <div className="flex gap-2 mt-4 flex-wrap justify-center">
             {["Creative", "Futuristic", "Steampunk", "Gothic", "Space"].map(tag => (
