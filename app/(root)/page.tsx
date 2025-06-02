@@ -80,6 +80,7 @@ const ART_BUBBLES_RIGHT = [
   { src: "/assets/images/a8.png", style: { top: "85%", right: "-14%", width: 150, height: 150 } },
 ];
 
+
 const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || "";
