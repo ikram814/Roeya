@@ -129,14 +129,12 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         </div>
       </div>
       {/* Galerie en bas */}
-      <div className="w-full mt-10 relative">
-        <div className="relative z-10">
-          <Collection
-            images={images?.data}
-            totalPages={images?.totalPage}
-            page={page}
-          />
-        </div>
+      <div className="gallery-full-width">
+        <Collection
+          images={images?.data}
+          totalPages={images?.totalPage}
+          page={page}
+        />
       </div>
     </>
   );

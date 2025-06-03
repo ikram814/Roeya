@@ -52,7 +52,7 @@ export const Collection = ({
 
       {images.filter(image => image.publicId).length > 0 ? (
         <Masonry
-          breakpointCols={{default: 3, 1024: 2, 640: 1}}
+          breakpointCols={{default: 4, 1024: 2, 640: 1}}
           className="masonry"
           columnClassName="masonry-column"
         >

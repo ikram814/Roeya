@@ -1456,6 +1456,29 @@ body.purple-theme .select-field {
   color: #fff !important;
 }
 
+.gallery-full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 0;
+  border-radius: 0 !important;
+  z-index: 10;
+  position: relative;
+}
+
+.collection-empty {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  border-radius: 0 !important;
+}
+
+.masonry {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
 
 
 

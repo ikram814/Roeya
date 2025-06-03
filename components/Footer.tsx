@@ -103,21 +103,21 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-4">Liens Rapides</h3>
+            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="hover:underline">
-                  Accueil
+                  Home
                 </Link>
               </li>
               <li>
                 <Link href="/credits" className="hover:underline">
-                  Crédits
+                  Credits
                 </Link>
               </li>
               <li>
                 <Link href="/profile" className="hover:underline">
-                  Profil
+                  Profile
                 </Link>
               </li>
             </ul>
@@ -125,7 +125,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-4">Suivez-nous</h3>
+            <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <svg
@@ -169,7 +169,7 @@ const Footer = () => {
           }`}
         >
           <p className="text-center text-sm">
-            © {new Date().getFullYear()} Roeya. Tous droits réservés.
+            © {new Date().getFullYear()} Roeya. All rights reserved.
           </p>
         </div>
       </div>
